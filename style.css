@@ -130,11 +130,20 @@ a:hover {
     #menu-toggle:checked ~ .nav-links {
         max-height: 300px;
     }
+    /* Für den Header auf einer Zeile */
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+    .hamburger {
+        margin-left: auto;
+        margin-right: 10px;
+    }
     .cta-button {
-        display: block;
-        margin: 10px auto 0 auto;
-        width: 80%;
-        text-align: center;
+        margin: 0 0 0 10px;
+        width: auto;
     }
 }
 
@@ -505,7 +514,7 @@ a:hover {
 /* RESPONSIVE FOOTER & HERO */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        /* Bereits durch oben im Media-Query angepasst */
     }
     .header__nav-list {
         flex-direction: column;
@@ -520,22 +529,21 @@ a:hover {
     }
 }
 
-/* NEUE RESPONSIVE ANPASSUNGEN */
-/* Diese Regeln sorgen dafür, dass der Header und der USP-Banner bei kleineren Bildschirmen korrekt dargestellt werden */
+/* NEUE RESPONSIVE ANPASSUNGEN FÜR DEN HEADER */
+/* Diese Regeln sorgen dafür, dass das Logo, das Hamburger-Menü und der CTA-Button in einer Zeile bleiben */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
+        height: auto;
+    }
+    .hamburger {
+        margin-left: auto;
+        margin-right: 10px;
     }
     .cta-button {
-        display: block;
-        margin: 10px auto;
-        width: 90%;
-        text-align: center;
-    }
-    .usp-banner__container {
-        flex-direction: column;
-        gap: 10px;
+        margin: 0 0 0 10px;
+        width: auto;
     }
 }
