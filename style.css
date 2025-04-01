@@ -9,6 +9,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 body {
   font-family: Arial, sans-serif;
@@ -37,7 +38,7 @@ a:hover {
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
   height: 80px;
   display: flex;
   align-items: center;
@@ -79,7 +80,8 @@ a:hover {
 .header__nav-list {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin: 20px 0;
 }
 .header__nav-item a {
   font-size: 1rem;
@@ -122,17 +124,16 @@ a:hover {
   }
   .header__nav-list {
     flex-direction: column;
-    padding: 20px;
-  }
-  .header__nav-item {
-    margin: 10px 0;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
   }
   #menu-toggle:checked ~ .nav-links {
     max-height: 300px;
   }
   .cta-button {
     display: block;
-    margin: 10px auto 0 auto;
+    margin: 10px auto 0;
     width: 80%;
     text-align: center;
   }
@@ -161,8 +162,9 @@ a:hover {
   position: relative;
   z-index: 1;
   color: #fff;
-  margin-right: 300px;
-  max-width: 600px;
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 0 10px;
   text-align: left;
 }
 .hero__content h1 {
@@ -201,7 +203,6 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   gap: 20px;
-  /* Immer in einer Reihe */
   flex-direction: row;
 }
 .usp-item {
@@ -492,6 +493,7 @@ a:hover {
   margin-bottom: 8px;
 }
 .footer-section ul li a {
+  
   color: #ccc;
   transition: color 0.3s ease;
 }
@@ -501,6 +503,7 @@ a:hover {
 @media (max-width: 768px) {
   .footer-container {
     text-align: center;
+    padding: 0 10px;
   }
 }
 
@@ -508,16 +511,45 @@ a:hover {
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-  }
-  .header__nav-list {
-    flex-direction: column;
-    margin-top: 10px;
+    padding: 10px;
   }
   .hero__content {
-    margin-right: 20px;
-    max-width: 300px;
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 0 10px;
   }
   .testimonial-card {
     flex: 0 0 100%;
+  }
+}
+
+/* USP-BANNER RESPONSIVE ICONS */
+@media (max-width: 992px) {
+  .usp-banner__container {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .usp-item {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .usp-item {
+    flex: 1 1 100%;
+  }
+}
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta-button {
+    display: inline-block;
+    margin: 0 10px;
+    width: auto;
+    vertical-align: middle;
   }
 }
